@@ -1,5 +1,5 @@
 @file:Suppress("UnstableApiUsage")
-
+import com.google.gms.googleservices.GoogleServicesPlugin
 import Config.Version.createVersion
 import Config.Version.source
 import Config.isRelease
@@ -223,6 +223,9 @@ dependencies {
     androidTestImplementation(libs.test.espresso.core)
 
     // debugImplementation(libs.leak.canary)
+googleServices {
+    missingGoogleServicesStrategy = GoogleServicesPlugin.MissingGoogleServicesStrategy.WARN
+}
 }
 
 /**
