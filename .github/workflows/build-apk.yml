@@ -25,6 +25,11 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Create dummy google-services.json
+        run: |
+          mkdir -p app/src/debug
+          echo '{}' > app/src/debug/google-services.json
+
       - name: Build APK
         run: ./gradlew assembleDebug --no-daemon
 
