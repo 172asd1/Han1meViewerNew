@@ -29,7 +29,10 @@ jobs:
         run: |
           mkdir -p app/src/debug
           echo '{}' > app/src/debug/google-services.json
-
+          
+      - name: Use Mock google-services.json
+        run: cp .github/mock-google-services.json app/google-services.json
+        
       - name: Build APK
         run: ./gradlew assembleDebug --no-daemon
 
